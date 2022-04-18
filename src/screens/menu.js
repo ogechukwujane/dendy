@@ -12,6 +12,7 @@ import {
   Image,
   TextInput,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 
 const Menu = ({navigation}) => {
@@ -26,7 +27,11 @@ const Menu = ({navigation}) => {
       <View style={styles.inputWrap}>
         <Image source={search} style={styles.search} />
         <Image source={arrow} style={styles.find} />
-        <TextInput style={styles.input} placeholder="Search artworks" placeholderTextColor= '#adabab' />
+        <TextInput
+          style={styles.input}
+          placeholder="Search artworks"
+          placeholderTextColor="#adabab"
+        />
       </View>
       <View style={styles.Wrapper}>
         <Text style={styles.subHeading}>Top</Text>
@@ -42,28 +47,30 @@ const Menu = ({navigation}) => {
           <Image source={arrow} style={styles.arrow} />
         </View>
       </View>
-      <View style={styles.imageWrap}>
-        <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
-          <Image source={girl} style={styles.image} />
-        </TouchableOpacity>
-        <View style={styles.titleWrap}>
-          <Text style={styles.title}>Acid Hippie</Text>
-          <Text style={styles.eth}>
-            10 <Text style={styles.sub}>ETH</Text>
-          </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.imageWrap}>
+          <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
+            <Image source={girl} style={styles.image} />
+          </TouchableOpacity>
+          <View style={styles.titleWrap}>
+            <Text style={styles.title}>Acid Hippie</Text>
+            <Text style={styles.eth}>
+              10 <Text style={styles.sub}>ETH</Text>
+            </Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.imageWrap}>
-        <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
-          <Image source={disk} style={styles.image} />
-        </TouchableOpacity>
-        <View style={styles.titleWrap}>
-          <Text style={styles.title}>Art Galaxy</Text>
-          <Text style={styles.eth}>
-            24 <Text style={styles.sub}>ETH</Text>
-          </Text>
+        <View style={styles.imageWrap}>
+          <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
+            <Image source={disk} style={styles.image} />
+          </TouchableOpacity>
+          <View style={styles.titleWrap}>
+            <Text style={styles.title}>Art Galaxy</Text>
+            <Text style={styles.eth}>
+              24 <Text style={styles.sub}>ETH</Text>
+            </Text>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
   flex: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   menuButton: {
     paddingVertical: 10,
@@ -108,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     position: 'relative',
     zIndex: -20,
-    color: 'black'
+    color: 'black',
   },
   search: {
     width: 25,

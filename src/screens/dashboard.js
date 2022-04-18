@@ -7,21 +7,24 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 
 const DashBoard = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.contentWrap}>
-        <Image source={glass} style={styles.image} />
-        <Text style={styles.text}>Congratulations!</Text>
-        <Text style={styles.text}>Your order is accepted</Text>
-      </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.buttonText}>Track your order</Text>
-      </TouchableOpacity>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.contentWrap}>
+          <Image source={glass} style={styles.image} />
+          <Text style={styles.text}>Congratulations!</Text>
+          <Text style={styles.text}>Your order is accepted</Text>
+        </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.goBack()}>
+          <Text style={styles.buttonText}>Track your order</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -50,6 +53,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius: 40,
     alignItems: 'center',
+    marginBottom: 10,
   },
   buttonText: {
     color: 'white',

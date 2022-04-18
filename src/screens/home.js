@@ -8,26 +8,29 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  ScrollView,
 } from 'react-native';
 
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.imageWrap}>
-      <Image style={styles.man} source={man} />
-        <Image style={styles.image} source={bg} />
-      </View>
-      <View style={styles.body}>
-        <Text style={styles.heading}>Dendy</Text>
-        <Text style={styles.text}>
-          Buy, sell and collect NFTs on our Market
-        </Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Menu')}>
-          <Text style={styles.buttonText}>Let's go</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.imageWrap}>
+          <Image style={styles.man} source={man} />
+          <Image style={styles.image} source={bg} />
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.heading}>Dendy</Text>
+          <Text style={styles.text}>
+            Buy, sell and collect NFTs on our Market
+          </Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Menu')}>
+            <Text style={styles.buttonText}>Let's go</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -36,17 +39,15 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
   },
-  imageWrap:{
+  imageWrap: {
     position: 'relative',
   },
   image: {
     height: 520,
-    zIndex:-20,
-    
+    zIndex: -20,
   },
-  man:{
+  man: {
     position: 'absolute',
     bottom: 0,
     alignSelf: 'center',
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius: 40,
     alignItems: 'center',
+    marginBottom: 10,
   },
   buttonText: {
     color: 'white',
