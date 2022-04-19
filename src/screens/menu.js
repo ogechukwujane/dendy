@@ -176,8 +176,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   image: {
-    width: 325,
-    height: 160,
+    width: '100%',
+    height: 155,
     borderRadius: 5,
   },
   eth: {
